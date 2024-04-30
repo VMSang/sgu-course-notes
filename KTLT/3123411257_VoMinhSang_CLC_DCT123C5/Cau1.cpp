@@ -8,28 +8,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Prime   via https://vnoi.info/wiki/algo/algebra/primality_check.md */
-bool isPrime(int n){
-	if(n==2 || n==3) return true;
-	if(n<3 || n%2 == 0 || n%3 == 0) return false;
-	for(int i=5; i*i <= n; i+=6){
-		if(n%i == 0 || n%(i+2) == 0) return false;
-	}
-	return true;
-}
+/* Prime | via https://vnoi.info/wiki/algo/algebra/primality_check.md */
+bool isPrime(int n);
 
 int main(){
 	//nhập m dòng và n cột
 	int m, n;
-	cout<<"Hãy nhập số dòng và số cột: ";
+	cout<<"Hay nhap so dong va so cot: ";
 	cin>>m>>n;
-
-	//tạo mảng 2 chiều bằng con trỏ cấp 2
+//-----------------------------câu a----------------------------------
 	int **array2D = new int*[m];
 	for(int i=0; i<m; i++){
 		array2D[i] = new int [n];
 	}
-
+//-----------------------------câu b----------------------------------
 	//nhập mảng và tìm lớn nhất
 	int MaxOfArray = INT_MIN;
 	for(int i=0; i<m; i++){
@@ -39,25 +31,27 @@ int main(){
 		}
 	}
 
-	cout<<"a) Xuất mảng\n";
+	cout<<"a) Xuat mang\n";
 	for(int i=0; i<m; i++){
 		for(int j=0; j<n; j++){
 			cout<<array2D[i][j]<<" ";
 		}
 		cout<<endl;
 	}
-	cout<<"b) Giá trị lớn nhất của mảng: "<<MaxOfArray<<"\n";
+	cout<<"b) Gia tri lon nhat cua mang: "<<MaxOfArray<<"\n";
+//-----------------------------câu c----------------------------------
 
-	cout<<"c) nhỏ nhất mỗi cột "<<"\n";
+	cout<<"c) gia tri nho nhat moi cot "<<"\n";
 	for(int i=0; i<n; i++){
 		int MinOfCol = INT_MAX;
 		for(int j=0; j<m; j++){
 			MinOfCol = min(MinOfCol, array2D[j][i]);
 		}
-		cout<<"nhỏ nhất cột "<<i<<" = "<<MinOfCol<<"\n";
+		cout<<"nho nhat cot "<<i<<" = "<<MinOfCol<<"\n";
 	}
+//-----------------------------câu d----------------------------------
 
-	cout<<"Câu d: Tổng các số nguyên tố trên mỗi dòng "<<"\n";
+	cout<<"d) Tong cac so nguyen to tren moi dong "<<"\n";
 	for(int i=0; i<m; i++){
 		int sum = 0;
 		for(int j=0; j<n; j++){
@@ -65,7 +59,7 @@ int main(){
 				sum+=array2D[i][j];
 			}
 		}
-		cout<<"Tổng dòng "<<i<<" = "<<sum<<"\n";
+		cout<<"Tong dong "<<i<<" = "<<sum<<"\n";
 	}
 
 	for(int i=0; i<n; i++){
@@ -73,4 +67,13 @@ int main(){
 	}
 	delete[] array2D;
 	return 0;
+}
+
+bool isPrime(int n){
+	if(n==2 || n==3) return true;
+	if(n<3 || n%2 == 0 || n%3 == 0) return false;
+	for(int i=5; i*i <= n; i+=6){
+		if(n%i == 0 || n%(i+2) == 0) return false;
+	}
+	return true;
 }
