@@ -6,7 +6,7 @@ using namespace std;
 //lưu ý: hàm nhập phải truyền tham chiếu, tức có dấu &
 void nhap(int *&a, int &n){
 	//mở file để đọc
-	ifstream myFile("input.txt"); //myFile là tên, đặc gì cũng được nha, input.txt là tên của file cùng cấp với file hiện tại
+	ifstream myFile("input.txt"); //myFile là tên, đặc gì cũng được, input.txt là tên của file cùng cấp với file hiện tại
 	//kiểm tra có mở được file hay không
 	if (!myFile){
 		cout<<"khong mo duoc";

@@ -14,8 +14,7 @@ int len(char *p);
 int compareTwoStrings(char *p1, char *p2);
 
 int main() {
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+    
     // nhập từ bàn phím
     char* s = new char[MAX_L];
     cin.getline(s, MAX_L);
