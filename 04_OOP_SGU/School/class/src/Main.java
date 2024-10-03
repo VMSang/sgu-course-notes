@@ -1,19 +1,20 @@
 import java.util.Scanner;
 
 public class Main {
+    private String name, birth;
+
+    public Main(String name, String birth) {
+        this.name = name;
+        this.birth = birth;
+    }
+
+    public String getName() {
+        return this.name;  // Trả về tên sinh viên
+    }
+
     public static void main(String[] args) {
-       Scanner sc = new Scanner(System.in);
-       int n = sc.nextInt();
-       String [] a  = new String[n];
-       String s = sc.nextLine();
-       int x = -1;
-       for(int i = 0; i<n; i++){
-           a[i] = sc.nextLine();
-           if(a[i].contains(s)){
-               x = i;
-           }
-       }
-       System.out.println(x);
+        submain s = new submain("CNTT1", 3.2, "Nguyen Van A", "22/12/2002");
+        System.out.println(s.getName());
     }
 }
 
