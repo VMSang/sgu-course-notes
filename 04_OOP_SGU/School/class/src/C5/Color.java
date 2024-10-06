@@ -1,13 +1,16 @@
 package C5;
 
-public class Color {
-    protected long x;
-    protected long y;
+public class color extends coordn{
+    protected String Color;
 
-    public Color(){
+    public color(){
     }
-
-    public Color(){
-        
+    public color(int x, int y, String Color){
+        super(x,y);
+        this.Color = Color;
+    }
+    public void xuat(){
+        super.xuat();
+        System.out.println(Color);
     }
 }
