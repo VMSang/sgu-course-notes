@@ -1,16 +1,15 @@
 package C5;
 
 public class color extends coordn{
-    protected String Color;
+    protected int color;
 
-    public color(){
-    }
-    public color(int x, int y, String Color){
+    public color(int x, int y, int Color){
         super(x,y);
-        this.Color = Color;
+        this.color = Color;
     }
+
     public void xuat(){
         super.xuat();
-        System.out.println(Color);
+        System.out.println("day la mau: " + color);
     }
 }
