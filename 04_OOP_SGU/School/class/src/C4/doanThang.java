@@ -1,4 +1,4 @@
-package C5;
+package C4;
 
 public class doanThang {
     private final color diem1;

@@ -30,14 +30,11 @@ public class phanSo {
         this.tu = mau;
         this.mau = tmp;
     }
-    public void phanSoTong(phanSo p){
-        if(this.mau == p.mau){
-            System.out.println(this.tu+p.tu + "/" + this.mau);
-        }
-        else {
-            System.out.println(this.tu*p.mau + p.tu*this.mau +
-                    "/" + this.mau*p.mau);
-        }
+    public phanSo Tong(phanSo p){
+        int newTu = this.tu * p.mau + p.tu * this.mau;
+        int newMau = this.mau * p.mau;
+        phanSo tmp = new phanSo(newTu, newMau);
+        return tmp;
     }
 
     public static void main(String[] args) {
@@ -47,6 +44,6 @@ public class phanSo {
         p1.xuat();
 
         phanSo p2 = new phanSo(9,16);
-        p1.phanSoTong(p2);
+        System.out.println(p1.Tong(p2));
     }
 }
