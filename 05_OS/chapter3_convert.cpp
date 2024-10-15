@@ -1,32 +1,75 @@
+/*
+input:
+1
+1240
+1
+4
+0 1 2 3
+3 2 6 4
+output: 2264
+
+input:
+0
+6578
+1
+6
+0 1 2 3 4 5
+6 4 5 7 1 9
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
-const int maxN = 100;
-int adr, sz, n, pg[maxN], fr[maxN];
+int adr, sz, n, *pg, *fr;
+map<int, int > mp;
 
-// logic to address
-void logic_address(){
-	int page = adr / sz; 
+// logic to physical
+void logic_physical() {
+	int page = adr / sz;
+	if (page < 0 || page > n) {
+		cout << "Dia Chi Khong Hop Le";
+		return;
+	}
+	// dia chi hop le
 	int frame = fr[page];
-	int cal = (frame * sz) + (adr % sz);
-	cout<<cal<<"\n";
+	cout << "chuyen sang dia chi vat ly la: " << (frame * sz) + (adr % sz) << "\n";
 }
 
 // address to logic
-void address_logic(){
+void physical_logic() {
 	int frame = adr / sz;
-	int page = fr[frame];
-	int cal = page * sz + (adr - frame * adr);
-	cout<<cal;
+	int page = mp[frame];
+	cout << "chuyen sang dia chi logic la: " << (page * sz) + (adr - (frame * sz));
 }
 
 int main() {
-	cin>>adr>>sz>>n;
-	for(int i = 0; i < n; i++) cin>>pg[i];
-	for(int i = 0; i < n; i++) cin>>fr[i];
+	// type == 1 <=> logic_physical
+	int type; cin >> type;
 
-	logic_address();
-	address_logic();
+	// địa chỉ ban đầu, kích thước mỗi trang (KB), số lượng frame
+	cin >> adr >> sz >> n;
+	sz *= 1024;
 
-    return 0;
+	if (type) {
+		// logic_physical
+		pg = new int[n];
+		fr = new int[n];
+		for (int i = 0; i < n; i++) cin >> pg[i];
+		for (int i = 0; i < n; i++) cin >> fr[i];
+		logic_physical();
+
+	}
+	else {
+		// physical_logic
+		for (int i = 0; i < n; i++) {
+			int tmp; cin >> tmp;
+		}
+		for (int i = 0; i < n; i++){
+			int tmp; cin>>tmp;
+			mp[tmp] = i;
+		} 
+		physical_logic();
+	}
+
+	return 0;
 }
