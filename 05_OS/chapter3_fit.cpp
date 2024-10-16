@@ -28,6 +28,7 @@ void first_fit() {
 				break;
 			}
 		}
+		// cout<<p[i]<<" ";
 	}
 
 	// print
