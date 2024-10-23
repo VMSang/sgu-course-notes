@@ -10,17 +10,9 @@ public class Main {
         hh[1].Nhap();
 
         for(hinhHoc hhtmp : hh){
-            if(hhtmp instanceof hinhTron){
-                hhtmp.tinhDienTich();
-                hhtmp.tinhChuVi();
-                hhtmp.Xuat();
-            }
-
-            if(hhtmp instanceof hinhChuNhat){
-                hhtmp.tinhDienTich();
-                hhtmp.tinhChuVi();
-                hhtmp.Xuat();
-            }
+            hhtmp.tinhDienTich();
+            hhtmp.tinhChuVi();
+            hhtmp.Xuat();
         }
     }
 }

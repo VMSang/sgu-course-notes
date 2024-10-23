@@ -1,4 +1,5 @@
 /*
+vd 3.2 trang 75 pdf chapter 3
 input:
 1
 1240
@@ -7,7 +8,8 @@ input:
 0 1 2 3
 3 2 6 4
 output: 2264
-
+--------------------------------------------
+vd 3.3 trang 75 pdf chapter 3
 input:
 0
 6578
@@ -15,6 +17,7 @@ input:
 6
 0 1 2 3 4 5
 6 4 5 7 1 9
+output: 434
 */
 
 #include <bits/stdc++.h>
@@ -23,7 +26,7 @@ using namespace std;
 int adr, sz, n, *pg, *fr;
 map<int, int > mp;
 
-// logic to physical
+// logic to physical <=> 1
 void logic_physical() {
 	int page = adr / sz;
 	if (page < 0 || page > n) {

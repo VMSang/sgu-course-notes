@@ -199,7 +199,7 @@ int main() {
 	// cac vung nho
 	for (int i = 0; i < m; i++) cin >> mem[i];
 
-	cout << "------------------------------" << "\n";
+	// cout << "------------------------------" << "\n";
 	first_fit();
 	best_fit();
 	worst_fit();
