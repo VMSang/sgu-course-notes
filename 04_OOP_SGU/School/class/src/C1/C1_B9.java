@@ -9,7 +9,7 @@ public class C1_B9 {
         String s = sc.nextLine();
         System.out.printf("Do dai cua chuoi: %s\n", s.length());
 
-        // b: delete space
+        // b: deleteStudent space
         // cách này kém hiệu quả
         s = s.replaceAll("\\s+", " ").trim();
         System.out.printf("sau khi xoa khoang trang: %s", s);

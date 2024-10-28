@@ -8,19 +8,18 @@ public class MainSV {
     public static void main(String[] arg){
         // lay va luu du lieu tu file
         Scanner sc = new Scanner(System.in);
+
         DSSV dssv = new DSSV();
-        int n = 0;
         try{
-            BufferedReader input = new BufferedReader(new FileReader("data.txt"));
+            BufferedReader input = new BufferedReader(new FileReader("class/src/C5/data.txt"));
             // doc hang dau tien
             String line = input.readLine();
+            int idx = 0;
             while(line != null){
                 String[] arr = line.split("\\s+");
-                dssv.add(arr[0], arr[1], arr[2]);
+                dssv.add(idx, arr[0], arr[1], arr[2]);
+                idx++;
                 line = input.readLine();
-            }
-            if (n != 0) {
-                n++;
             }
             input.close();
         } catch(Exception ex){
@@ -35,13 +34,25 @@ public class MainSV {
         System.out.println("5 = tim kiem sinh vien");
         System.out.println("6 = thoat");
 
-
         switch (sc.nextInt()){
             case 1:
-
+                dssv.showAllStudent();
                 break;
             case 2:
-
+                dssv.add(sc.nextInt(), sc.nextLine(), sc.nextLine(), sc.nextLine());
+                break;
+            case 3:
+                dssv.showAllStudent();
+                System.out.println("xoa theo stt");
+                dssv.deleteStudent(sc.nextInt());
+            case 4:
+                dssv.showAllStudent();
+                dssv.editStudent(sc.nextInt(), sc.nextInt());
+            case 5:
+                System.out.println("nhap ma sinh vien");
+                dssv.findStudent(sc.nextLine());
+            case 6:
+                break;
         }
     }
 }

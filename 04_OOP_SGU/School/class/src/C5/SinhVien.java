@@ -26,7 +26,7 @@ public class SinhVien {
         this.SDT = sv.SDT;
     }
 
-    public String getMav(){
+    public String getMasv(){
         return this.masv;
     }
 
@@ -59,5 +59,9 @@ public class SinhVien {
 
     public void xuat(){
         System.out.println(this.masv + " " + this.ten + " " + this.SDT);
+    }
+
+    public String toString(){
+        return this.masv + " " + this.ten + " " + this.SDT;
     }
 }
