@@ -34,25 +34,28 @@ public class MainSV {
         System.out.println("5 = tim kiem sinh vien");
         System.out.println("6 = thoat");
 
-        switch (sc.nextInt()){
-            case 1:
-                dssv.showAllStudent();
-                break;
-            case 2:
-                dssv.add(sc.nextInt(), sc.nextLine(), sc.nextLine(), sc.nextLine());
-                break;
-            case 3:
-                dssv.showAllStudent();
-                System.out.println("xoa theo stt");
-                dssv.deleteStudent(sc.nextInt());
-            case 4:
-                dssv.showAllStudent();
-                dssv.editStudent(sc.nextInt(), sc.nextInt());
-            case 5:
-                System.out.println("nhap ma sinh vien");
-                dssv.findStudent(sc.nextLine());
-            case 6:
-                break;
+        while(true) {
+            switch (sc.nextInt()) {
+                case 1:
+                    dssv.showAllStudent();
+                    break;
+                case 2:
+                    dssv.add(sc.nextInt(), sc.nextLine(), sc.nextLine(), sc.nextLine());
+                    break;
+                case 3:
+                    dssv.showAllStudent();
+                    System.out.println("xoa theo stt");
+                    dssv.deleteStudent(sc.nextInt());
+                case 4:
+                    dssv.showAllStudent();
+                    dssv.editStudent(sc.nextInt(), sc.nextInt());
+                case 5:
+                    System.out.println("nhap ma sinh vien");
+                    dssv.findStudent(sc.nextLine());
+                case 6:
+                    break;
+            }
+            break;
         }
     }
 }
