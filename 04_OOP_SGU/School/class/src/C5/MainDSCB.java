@@ -19,11 +19,13 @@ public class MainDSCB {
             ex.printStackTrace();
         }
         System.out.println("da doc file xong");
-        // demo
+
+        // demo function
         dscb.crt("9999", "Van A", 30, "binh duong","5", "cong nhan");
-        dscb.edit("5768");
-        dscb.del("9999");
-        dscb.fd("Van A");
+//        dscb.edit("5768");
+//        dscb.del("9999");
+//        dscb.fd("Van A");
         dscb.showAll();
+        dscb.WriteAllCanBo();
     }
 }

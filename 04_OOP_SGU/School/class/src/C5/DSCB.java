@@ -2,6 +2,7 @@ package C5;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.FileWriter;
 
 public class DSCB {
     public ArrayList<canBo> dscb = new ArrayList<>();
@@ -10,9 +11,9 @@ public class DSCB {
 
     public void crt(String id, String name, int age, String adr, String data, String type){
         cnt++;
-        if(type == "cong nhan"){
+        if(type.equals("cong nhan")){
             dscb.add(new congNhan(id, name, age, adr, Integer.parseInt(data)));
-        } else if(type == "ky su"){
+        } else if(type.equals("ky su")){
             dscb.add(new kySu(id, name, age, adr, data));
         } else {
             dscb.add(new nhanVien(id, name, age, adr, data));
@@ -72,5 +73,20 @@ public class DSCB {
             System.out.println(tmp.id + " " + tmp.name + " " + tmp.age + " " + tmp.adr);
         }
         System.out.println("---------------------------------");
+    }
+
+    public void Write(String data){
+        try {
+            FileWriter fw = new FileWriter("class/src/C5/outputDSCB.txt");
+            fw.write(data);
+            fw.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void WriteAllCanBo() {
+        for (canBo tmp : dscb) {
+            Write(tmp.getId() + " " + tmp.getName());
+        }
     }
 }
