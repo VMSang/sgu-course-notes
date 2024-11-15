@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Truck extends vehicle {
     private int max_load;
-
+    super()
     public Truck(){}
 
     public void input(){

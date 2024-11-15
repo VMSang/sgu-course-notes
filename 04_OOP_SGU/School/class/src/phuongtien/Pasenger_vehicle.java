@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Pasenger_vehicle extends vehicle{
     private int max_pass;
     private int number;
+    super(reg_num, brand);
 
     public Pasenger_vehicle(){}
 
